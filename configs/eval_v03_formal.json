@@ -1,0 +1,147 @@
+{
+  "protocol_id": "cornercaselab_v03_eval_v1",
+  "status": "frozen",
+  "frozen_utc": "2026-10-04T09:45:01Z",
+  "frozen_against_commit": "ce3a9b0767ada2d91d2cd99bafd3fe2114892ad3",
+  "purpose": "evaluation",
+  "policy": "boundary",
+  "calibration_seed_development_only": 20261003,
+  "formal_evaluation_started": false,
+  "budget": {
+    "total_episode_budget": 1000,
+    "search_pool": 700,
+    "audit_pool": 300,
+    "search_fraction": 0.7,
+    "closure_rule": "search_pool + audit_pool == total_episode_budget",
+    "primary_score_budget_basis": "1000 allocated episode slots, independent of how many were actually launched",
+    "renormalise_on_unspent_audit": false
+  },
+  "audit": {
+    "audit_candidates": 10,
+    "audit_repeats": 30,
+    "audit_pool": 300,
+    "backfill": "none",
+    "unspent_rule": "no_backfill_leave_unused_audit_reservation_unspent_v1"
+  },
+  "methods": [
+    "random_search",
+    "fixed_explore_confirm",
+    "adaptive_explore_confirm"
+  ],
+  "method_parameters": {
+    "confirm_repeats": 2,
+    "pool_fraction": 0.25,
+    "min_internal_per_candidate": 1,
+    "max_internal_per_candidate": 5,
+    "global_internal_confirmation_cap": 175,
+    "global_cap_rule": "floor(pool_fraction * search_pool) = floor(0.25 * 700) = 175",
+    "scope_note": "one MethodConfig is used for all three methods; parameters unused by a method are inert for it"
+  },
+  "scoring": {
+    "scoring_protocol_id": "v03_scoring_v1",
+    "reference": "docs/SCORING_PROTOCOL_V03.md",
+    "required_audit_repeats": 30,
+    "stable_criterion": {
+      "phase": "final_audit_only",
+      "mixes_in": [],
+      "planned_n": 30,
+      "required_valid_observations": 30,
+      "interval": "wilson",
+      "sided": 2,
+      "confidence": 0.95,
+      "continuity_correction": false,
+      "z": 1.959963984540054,
+      "lower_bound_strictly_greater_than": 0.5,
+      "minimum_passed_collapses_of_30": 21,
+      "incomplete_policy": "n_effective < 30 -> incomplete with stable = null",
+      "not_applicable_policy": "planned n != 30 or unfinished run -> not_applicable with stable = null"
+    },
+    "primary_metric": {
+      "name": "Stable Neighborhood Yield",
+      "abbreviation": "SNY",
+      "field": "nonoverlapping_passed_count",
+      "definition": "exact maximum number of pairwise non-overlapping six-dimensional local neighbourhoods among the candidates that pass the Final Audit stability criterion",
+      "exact_solver": true,
+      "exact_solver_limit": 20,
+      "tie_break": "lexicographically smallest sorted candidate-id list",
+      "must_not_be_interpreted_as": [
+        "distinct root causes",
+        "real crash or accident probability",
+        "real connected failure regions"
+      ]
+    }
+  },
+  "final_audit_selection": {
+    "implementation_frozen": true,
+    "rule_id": "rank_by_internal_stability_desc_then_first_seen_asc_v1",
+    "key": "(- internal_stability if present else +1.0, first_seen_episode asc, candidate_id asc)",
+    "none_stability_rank": "treated as -1.0 before negation, so candidates with no internal observation rank after every candidate with at least one observation, including internal_stability == 0.0",
+    "random_search_fallback": "first-seen ascending, then candidate_id ascending",
+    "framework": "nomination is part of the end-to-end method; the three methods knowingly have different information sets",
+    "common_selection_comparison": "only as a separate ablation protocol, never as a retroactive change to this protocol"
+  },
+  "seeds": {
+    "paired": true,
+    "count": 20,
+    "role": "formal evaluation master seeds, used in this exact order by every method",
+    "derivation": "seed_i = int.from_bytes(sha256(b'CornerCaseLab-v0.3-formal-{i}').digest()[:4], 'big'), i = 0..19",
+    "values": [
+      3885243241,
+      1704487720,
+      592379183,
+      1151400128,
+      3272561144,
+      3391624141,
+      3736130552,
+      3065082847,
+      2983125598,
+      142216931,
+      1007851318,
+      3069633350,
+      2272084942,
+      3735670268,
+      4175222997,
+      614416336,
+      4287176670,
+      2634949118,
+      4292498487,
+      416355318
+    ]
+  },
+  "reporting": {
+    "per_method_raw_scores": "all 20 raw SNY values, kept",
+    "summary_statistics": [
+      "mean",
+      "median",
+      "standard_deviation",
+      "iqr"
+    ],
+    "standard_deviation": "sample standard deviation (ddof = 1)",
+    "paired_contrasts_primary": [
+      "adaptive_explore_confirm - random_search"
+    ],
+    "paired_contrasts_secondary": [
+      "adaptive_explore_confirm - fixed_explore_confirm",
+      "fixed_explore_confirm - random_search"
+    ],
+    "interval": {
+      "method": "percentile paired bootstrap",
+      "resamples": 10000,
+      "bootstrap_seed": 314159265,
+      "confidence": 0.95,
+      "units": "paired per-seed SNY differences"
+    },
+    "primary_success_criterion": "effect size with uncertainty; p-values are not the primary criterion",
+    "descriptive_metrics": [
+      "passed_candidate_count",
+      "unique_search_collision_candidates",
+      "raw_search_collision_samples",
+      "internal_confirm_launches",
+      "audit_incomplete_count",
+      "audit_reserved_unspent",
+      "actual_simulator_launches",
+      "errors",
+      "wall_time_s"
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+contrast,role,n_pairs,mean_difference,bootstrap_ci_low,bootstrap_ci_high
+adaptive_explore_confirm - random_search,primary,20,2.3500,1.9500,2.7500
+adaptive_explore_confirm - fixed_explore_confirm,secondary,20,1.0500,0.5500,1.5500
+fixed_explore_confirm - random_search,secondary,20,1.3000,0.7500,1.8500

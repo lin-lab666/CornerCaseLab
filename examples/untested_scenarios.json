@@ -1,0 +1,41 @@
+{
+  "status": "sampled_only_not_simulated",
+  "trials": [
+    {
+      "scenario": {
+        "ego_speed": 21.12935,
+        "front_gap": 59.171335,
+        "front_speed": 22.916297,
+        "ramp_speed": 29.030897,
+        "ramp_target_speed": 31.433035,
+        "ramp_x": 89.773841
+      },
+      "scenario_id": "0deced4ea81d5942",
+      "sim_seed": 3148352604
+    },
+    {
+      "scenario": {
+        "ego_speed": 23.203929,
+        "front_gap": 42.338353,
+        "front_speed": 31.219914,
+        "ramp_speed": 19.601094,
+        "ramp_target_speed": 32.218869,
+        "ramp_x": 93.360918
+      },
+      "scenario_id": "efbc76635b8c8315",
+      "sim_seed": 3356598258
+    },
+    {
+      "scenario": {
+        "ego_speed": 28.911503,
+        "front_gap": 72.910049,
+        "front_speed": 29.902464,
+        "ramp_speed": 23.420165,
+        "ramp_target_speed": 21.132376,
+        "ramp_x": 131.171352
+      },
+      "scenario_id": "ae82cabad32828f5",
+      "sim_seed": 4020960225
+    }
+  ]
+}

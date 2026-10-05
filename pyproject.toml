@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cornercaselab"
+version = "0.3.0"
+description = "A research starter for budget-aware autonomous-driving scenario testing"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "吴昊霖" }]
+dependencies = []
+
+[project.optional-dependencies]
+sim = [
+  "highway-env==1.10.2",
+  "gymnasium==1.2.2",
+  "numpy>=1.24,<3",
+  "Pillow>=10,<13",
+  "matplotlib>=3.8,<4"
+]
+
+[project.scripts]
+cornercaselab = "cornercaselab.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cornercaselab*"]

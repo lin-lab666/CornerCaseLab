@@ -1,0 +1,4 @@
+method,n_seeds,mean_sny,median_sny,sd_sny,q1,q3,min,max
+random_search,20,4.7500,5.0000,1.446411,4.0000,6.0000,2.0000,7.0000
+fixed_explore_confirm,20,6.0500,6.0000,1.431782,5.0000,7.0000,4.0000,9.0000
+adaptive_explore_confirm,20,7.1000,7.0000,1.372665,6.7500,7.2500,5.0000,10.0000

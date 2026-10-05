@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use CornerCaseLab in your research, please cite this software."
+type: software
+title: "CornerCaseLab"
+abstract: "Budget-aware scenario testing for autonomous-driving policies: a fixed-budget comparison of random search against fixed and adaptive explore/confirm allocation, with an independent final audit and a spatial stability score."
+authors:
+  - family-names: "吴"
+    given-names: "昊霖"
+version: "0.3.0"
+license: "Apache-2.0"
+repository-code: "https://github.com/lin-lab666/CornerCaseLab"
+keywords:
+  - "autonomous driving"
+  - "scenario testing"
+  - "simulation"
+  - "failure discovery"
+  - "reproducibility"

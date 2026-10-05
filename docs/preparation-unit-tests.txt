@@ -1,0 +1,44 @@
+test_cruise_ignores_hazard (test_core.MetricPolicyTests.test_cruise_ignores_hazard) ... ok
+test_forward_ttc (test_core.MetricPolicyTests.test_forward_ttc) ... ok
+test_free_road_speed_actions (test_core.MetricPolicyTests.test_free_road_speed_actions) ... ok
+test_reactive_brakes (test_core.MetricPolicyTests.test_reactive_brakes) ... ok
+test_sim_settings (test_core.MetricPolicyTests.test_sim_settings) ... ok
+test_ttc_excludes_absent (test_core.MetricPolicyTests.test_ttc_excludes_absent) ... ok
+test_ttc_excludes_adjacent_lane (test_core.MetricPolicyTests.test_ttc_excludes_adjacent_lane) ... ok
+test_ttc_excludes_nonclosing (test_core.MetricPolicyTests.test_ttc_excludes_nonclosing) ... ok
+test_ttc_overlapping_projection (test_core.MetricPolicyTests.test_ttc_overlapping_projection) ... ok
+test_unknown_policy (test_core.MetricPolicyTests.test_unknown_policy) ... ok
+test_wilson_boundaries (test_core.MetricPolicyTests.test_wilson_boundaries) ... ok
+test_wilson_invalid (test_core.MetricPolicyTests.test_wilson_invalid) ... ok
+test_wilson_symmetric (test_core.MetricPolicyTests.test_wilson_symmetric) ... ok
+test_changed_parameter_changes_identity (test_core.ScenarioTests.test_changed_parameter_changes_identity) ... ok
+test_default_roundtrip (test_core.ScenarioTests.test_default_roundtrip) ... ok
+test_identity_numeric_normalisation (test_core.ScenarioTests.test_identity_numeric_normalisation) ... ok
+test_json_rejects_nan (test_core.ScenarioTests.test_json_rejects_nan) ... ok
+test_local_bound_intersection (test_core.ScenarioTests.test_local_bound_intersection) ... ok
+test_local_perturbations_change_parameters (test_core.ScenarioTests.test_local_perturbations_change_parameters) ... ok
+test_reject_nonfinite (test_core.ScenarioTests.test_reject_nonfinite) ... ok
+test_reject_nonnumeric (test_core.ScenarioTests.test_reject_nonnumeric) ... ok
+test_reject_outside_bounds (test_core.ScenarioTests.test_reject_outside_bounds) ... ok
+test_sampling_bounds (test_core.ScenarioTests.test_sampling_bounds) ... ok
+test_sampling_repeatability (test_core.ScenarioTests.test_sampling_repeatability) ... ok
+test_seed_contract (test_core.ScenarioTests.test_seed_contract) ... ok
+test_seed_stream_separation (test_core.ScenarioTests.test_seed_stream_separation) ... ok
+test_strict_schema (test_core.ScenarioTests.test_strict_schema) ... ok
+test_atomic_json_roundtrip (test_core.StorageExperimentTests.test_atomic_json_roundtrip) ... ok
+test_budget_and_records (test_core.StorageExperimentTests.test_budget_and_records) ... ok
+test_confirmation_interval_is_not_search_interval (test_core.StorageExperimentTests.test_confirmation_interval_is_not_search_interval) ... ok
+test_failed_episode_counts_budget_not_safety (test_core.StorageExperimentTests.test_failed_episode_counts_budget_not_safety) ... ok
+test_interrupt_preserves_completed_data (test_core.StorageExperimentTests.test_interrupt_preserves_completed_data) ... ok
+test_no_overwrite (test_core.StorageExperimentTests.test_no_overwrite) ... ok
+test_sample_cli_needs_no_sim (test_core.StorageExperimentTests.test_sample_cli_needs_no_sim) ... ok
+test_source_digest_repeatable (test_core.StorageExperimentTests.test_source_digest_repeatable) ... ok
+test_headless_gif (test_integration.SimulatorIntegrationTests.test_headless_gif) ... skipped 'Real simulator dependencies are not installed'
+test_initial_conditions (test_integration.SimulatorIntegrationTests.test_initial_conditions) ... skipped 'Real simulator dependencies are not installed'
+test_same_seed_trace_replay (test_integration.SimulatorIntegrationTests.test_same_seed_trace_replay) ... skipped 'Real simulator dependencies are not installed'
+test_seed_changes_actual_nuisance (test_integration.SimulatorIntegrationTests.test_seed_changes_actual_nuisance) ... skipped 'Real simulator dependencies are not installed'
+
+----------------------------------------------------------------------
+Ran 39 tests in 0.107s
+
+OK (skipped=4)

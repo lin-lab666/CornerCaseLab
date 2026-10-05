@@ -1,0 +1,4 @@
+method,mean_unique_search_candidates,mean_internal_confirm,audited_candidates_total,passed_candidates_total,audit_pass_rate,mean_sny,total_errors,mean_wall_time_s
+random_search,87.2000,0.0000,200,95,0.4750,4.7500,0,347.378
+fixed_explore_confirm,71.1500,142.1500,200,121,0.6050,6.0500,0,311.321
+adaptive_explore_confirm,67.7000,175.0000,200,142,0.7100,7.1000,0,319.469

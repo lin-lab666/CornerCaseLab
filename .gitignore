@@ -1,0 +1,26 @@
+# Virtual environments, packaging and caches
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Run outputs (never published) and local secrets
+runs/
+.env
+.env.*
+
+# Local backups
+*.bak
+*.bak_*
+
+# Agent / editor / OS scratch files
+.dsh_temp/
+.dsh/
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+*.log
