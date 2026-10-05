@@ -173,7 +173,7 @@ archive 中，不在此公开发布。
   `scripts/run_v03_formal.py`（编排层）；协议、仿真、打分与分析实现三者完全一致。
 
 ```powershell
-# 环境与完整测试套件（272 项）
+# 环境与完整测试套件（274 项）
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e ".[sim]"
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
@@ -191,7 +191,7 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe scripts\render_formal_results_v03.py --check-only
 ```
 
-关于受限环境：272 项测试中有 8 项使用 Python `tempfile`，在限制写入的沙箱中会被阻止；
+关于受限环境：274 项测试中有 8 项使用 Python `tempfile`，在限制写入的沙箱中会被阻止；
 在正常环境下它们会通过。在正式结果冻结之前，完整测试套件是全部通过的。
 
 ## 快速开始
@@ -238,7 +238,7 @@ scripts/                run_v03_formal.py、score_v03.py、render_formal_results
 docs/                   评估协议、打分协议、研究计划、验证记录、归属与相关工作
 reports/formal_v03/     已发布结果：图（PNG+PDF）、表（CSV）、raw_sny_by_seed.csv、
                         数据冻结清单、结果叙述
-tests/                  272 项单元/集成测试，含协议与打分测试
+tests/                  274 项单元/集成测试，含协议与打分测试
 runs/                   运行输出（已被 gitignore —— 原始正式数据不随仓库分发）
 ```
 

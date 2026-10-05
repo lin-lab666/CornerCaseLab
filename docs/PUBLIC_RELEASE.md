@@ -145,7 +145,38 @@ differ for exactly the two reasons above.
 
 ---
 
-## E. Scope and limitations
+## E. Freeze-manifest path sanitization
+
+One field of the published data freeze manifest was sanitized for privacy.
+
+* The **original freeze artifact in the private research archive is unmodified.** No
+  private file was edited, rewritten or regenerated to produce this public snapshot.
+* In this public snapshot, **only the `formal_run_root` field** of
+  `reports/formal_v03/FORMAL_DATA_FREEZE.json` was changed: an absolute local path in
+  the private archive was normalized to the relative run directory path
+
+  ```
+  runs/v03_formal_eval_20261004_205611
+  ```
+
+* This is a **path sanitization only**. The field records where the run lived on the
+  machine that produced it; it carries no measurement, count, hash or setting.
+* The **415 formal-data SHA256 hashes** in
+  [`formal_data_file_sha256.csv`](../reports/formal_v03/formal_data_file_sha256.csv)
+  and the **key artifact hashes** (`key_artifact_sha256`, `analysis_sha256`,
+  `frozen_config_sha256`) are **unchanged** by this sanitization. The freeze's
+  `file_count` (415), `allocated_episode_slots` (60000) and `integrity` block are also
+  unchanged.
+* The two versions of the file were compared directly: `formal_run_root` is the **only**
+  difference. Every other key — including all 415 entries of `file_sha256` and the whole
+  of `key_artifact_sha256` — is identical.
+* Because of this one field, the **public copy of `FORMAL_DATA_FREEZE.json` is not
+  byte-identical** to the private archive's copy, and no such byte-identity is claimed.
+  The sanitization changes no recorded hash and therefore invalidates no published data.
+
+---
+
+## F. Scope and limitations
 
 * The formal evaluation comprises **60,000 real HighwayEnv episodes**
   (20 paired seeds × 3 methods × 1000 allocated episode slots), with **0 simulator

@@ -201,7 +201,7 @@ re-score the raw episodes without re-running them.
   analysis implementations are unchanged across them.
 
 ```powershell
-# environment + full test suite (272 tests)
+# environment + full test suite (274 tests)
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -e ".[sim]"
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
@@ -219,7 +219,7 @@ py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe scripts\render_formal_results_v03.py --check-only
 ```
 
-Note on restricted environments: eight of the 272 tests use Python's `tempfile`, which a
+Note on restricted environments: eight of the 274 tests use Python's `tempfile`, which a
 restricted-write sandbox blocks; they pass in a normal environment. The whole suite passed
 in full before the formal results were frozen.
 
@@ -271,7 +271,7 @@ docs/                   evaluation + scoring protocols, research plan, validatio
                         attribution, related work
 reports/formal_v03/     published results: figures (PNG+PDF), tables (CSV),
                         raw_sny_by_seed.csv, data freeze, results narrative
-tests/                  272 unit/integration tests, including protocol and scoring tests
+tests/                  274 unit/integration tests, including protocol and scoring tests
 runs/                   run outputs (gitignored — raw formal data is not distributed)
 ```
 
